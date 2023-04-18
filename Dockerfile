@@ -72,10 +72,13 @@ RUN pip  install -U  pandas jupyter ipywidgets scikit-learn matplotlib  ipython 
 
 #RUN mkdir ~/.jupyter/
 RUN python3 -m pip install ipykernel 
+RUN python3 -m pip install networkx 
+RUN python3 -m pip install qiskit_aer
+RUN python3 -m pip install qiskit_optimization
 RUN python3 -m ipykernel install --user 
 RUN python3 -m ipykernel.kernelspec 
 RUN jupyter nbextension enable --py widgetsnbextension 
-USER qmuser
+USER qmuser 
 RUN jupyter notebook --generate-config 
 
 USER qmuser
