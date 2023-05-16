@@ -75,6 +75,7 @@ RUN python3 -m pip install ipykernel
 RUN python3 -m pip install networkx 
 RUN python3 -m pip install qiskit_aer
 RUN python3 -m pip install qiskit_optimization
+RUN python3 -m pip install pylatexenc
 RUN python3 -m ipykernel install --user 
 RUN python3 -m ipykernel.kernelspec 
 RUN jupyter nbextension enable --py widgetsnbextension 
