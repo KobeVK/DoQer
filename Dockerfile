@@ -76,8 +76,10 @@ RUN python3 -m pip install networkx
 RUN python3 -m pip install qiskit_aer
 RUN python3 -m pip install qiskit_optimization
 RUN python3 -m pip install pylatexenc
+RUN python3 -m pip install qiskit-ibmq-provider
 RUN python3 -m ipykernel install --user 
-RUN python3 -m ipykernel.kernelspec 
+RUN python3 -m ipykernel.kernelspec
+RUN python3 -m pip install qiskit-ibmq-provider
 RUN jupyter nbextension enable --py widgetsnbextension 
 USER qmuser 
 RUN jupyter notebook --generate-config 
@@ -107,5 +109,5 @@ RUN chown -R qmuser:qmuser /home/qmuser/
 USER qmuser
 WORKDIR /home/qmuser
 RUN ["/bin/bash"]
-CMD ["bash", "./run_jupyter.sh"]
+CMD ["/bin/bash", "-c", "/app/run_jupyter.sh"]
 EXPOSE 8097 7842
