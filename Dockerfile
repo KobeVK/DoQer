@@ -76,7 +76,7 @@ RUN python3 -m pip install networkx
 RUN python3 -m pip install qiskit_aer
 RUN python3 -m pip install qiskit_optimization
 RUN python3 -m pip install pylatexenc
-RUN python3 -m pip install qiskit-ibmq-provider
+RUN python3 -m pip install qiskit_ibm_provider
 RUN python3 -m ipykernel install --user 
 RUN python3 -m ipykernel.kernelspec
 RUN python3 -m pip install qiskit-ibmq-provider
